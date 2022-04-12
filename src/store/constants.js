@@ -1,0 +1,5 @@
+export const SET_USER = "SETUSER";
+export const CLEAR_USER = "CLEARUSER";
+export const SET_NAV_INDEX = "SETNAVINDEX";
+export const SET_ARTICLE_PARAMS = "SETARTICLEPARAMS";
+export const SET_NAV_INDEX_BY_ROUTE = "SETNAVINDEXBYROUTE";

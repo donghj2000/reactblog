@@ -1,0 +1,49 @@
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100%;
+    border-bottom: 1px solid #eee;
+    background-color: #fff;
+
+    .nav-content {
+        width: 1200px;
+        margin: 0 auto;
+    }
+
+    .logo {
+        height: 50px;
+        margin: 0;
+        border-radius: 50%;
+        margin-top: 5px;
+    }
+
+    .ant-menu-horizontal {
+        border-bottom: none;
+    }
+
+    .ant-menu--horizontal>.ant-menu-item {
+        cursor: pointer;
+        color: #333;
+    }
+
+    .nav-right {
+        position: relative;
+        padding-top: 15px;
+        text-align: right;
+
+        .ant-dropdown {
+            cursor: pointer;
+            padding-right: 30px;
+        }
+
+        .user-img {
+            position: relative;
+            top: 0px;
+            right: 0;
+            width: 50px;
+            border-radius: 50%;
+        }
+    }
+}

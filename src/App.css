@@ -1,0 +1,42 @@
+
+@import url("./less/index.less");
+body {
+  background-color: #f9f9f9;
+}
+
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: left;
+  padding-top: 50px;
+}
+
+
+img {
+  vertical-align: bottom;
+}
+
+.layout {
+  height: auto;
+  background-color: #f9f9f9;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  flex: 1;
+  margin-bottom: 24px;
+}
+
+.view-content {
+  width: 100%;
+  margin-top: 12px;
+  background-color: #fff;
+  padding: 12px 24px 24px 24px;
+  border-radius: 8px;
+}
+.ant-layout-header{
+    height:80px;
+}
+
