@@ -91,7 +91,7 @@ class RegisterAndLogin extends Component {
                 this.state.params.email = values.email;
                 this.state.params.desc = values.desc;
                 data = await register(this.state.params);
-                message.success("注册成功." + data.data.detail, 5);
+                message.success("注册成功." + data.data.detail, 10);
             } else {
                 let user = null;
                 let expire_days = 0;
@@ -345,7 +345,7 @@ class RegisterAndLogin extends Component {
                             <Input 
                                 ref="email"
                                 prefix={ <UserOutlined className="site-form-item-icon" /> } 
-                                placeholder="请输入有效邮箱" 
+                                placeholder="用于接收注册验证码，修改密码等。" 
                                 tabIndex="5" 
                                 type="text" />
                         </Form.Item>
