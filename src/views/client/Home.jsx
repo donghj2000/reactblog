@@ -86,8 +86,15 @@ class Home extends Component {
             console.error(e);
         }
         this.setState({ isLoading: false });
-    }  
-
+    }
+    
+    searchByTag(tag_id) {
+        let params = this.state.params;
+        params.tag = tag_id;
+        this.setState({ params: params });
+        this.handleSearch(1)
+    }
+    
     componentDidMount() {
         window.onscroll = function() {          
             if (getScrollTop() + getWindowHeight() > getDocumentHeight() - 100) {
@@ -105,7 +112,7 @@ class Home extends Component {
         return (
             <div className="left clearfix view-content">
                  {  this.state.articleList ?
-                    <ArticleList articleList={ this.state.articleList } /> : ""
+                    <ArticleList articleList={ this.state.articleList } onSearchByTag={(tag_id)=>this.searchByTag(tag_id)} /> : ""
 			     }
                  <Loading tips={this.state.isLoading ? "拼命加载中---------------" :
                      (this.state.isLoadEnd ? "---------------我也是有底线的啦---------------" : "")}>
