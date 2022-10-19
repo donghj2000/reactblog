@@ -33,10 +33,10 @@ class ArticleList extends Component{
                                 <span>评论 { article.comments }</span>
                                 <span>赞 { article.likes }</span>
                                 { article.tags_info.map(tag =>  (
-                                            <Link key={ tag.id } to="`/articles?tags=${tag.id}&catalog=`">
-                                                <Tag>{ tag.name }</Tag>
-                                            </Link>
-                                        ))
+                                     <Tag.CheckableTag key="{tag.id}" color="success" onChange={ ()=> {this.props.onSearchByTag(tag.id);} }>
+                                         { tag.name }
+                                     </Tag.CheckableTag>
+                                  ))
                                 }
                                 { article.created_at?
                                   (<span className="time">{ timestampToTime(article.created_at, true) }</span>) : ""
