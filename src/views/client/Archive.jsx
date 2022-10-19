@@ -35,9 +35,12 @@ class Archive extends Component {
       let params = this.state.params;
       try {
         const data = await getArchiveList(params);
+        let receivedYearListCnt = data.data.results.length; //本次收到的文章分布在几个年份里
+        //如果本次接收到的第一条文章的年份和上次收到的最后一条的相同，则合并到一个列表里
         if (this.state.articleList.length > 0 &&
             this.state.articleList[this.state.articleList.length - 1].year ==
-            data.data.results[0].year ) {
+            data.data.results[0].year ) 
+        {
             this.state.articleList[this.state.articleList.length - 1].list = 
             [...this.state.articleList[this.state.articleList.length - 1].list, 
              ...data.data.results[0].list];
@@ -55,7 +58,8 @@ class Archive extends Component {
         this.state.articleList.forEach(item => {
         	  received += item.list.length;
         });
-        if (this.state.total <= received) {
+        if (receivedYearListCnt == 0 || this.state.total <= received) {
+            window.onscroll = null;
             this.setState({ isLoadEnd: true });
         }
       } catch (e) {
